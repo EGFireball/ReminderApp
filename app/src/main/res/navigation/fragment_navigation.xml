@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/fragment_navigation" app:startDestination="@id/messageListFragment">
+
+    <fragment android:id="@+id/messageListFragment" android:name="dimi.com.jetpack.ui.main.MessageListFragment"
+              android:label="MessageListFragment">
+        <action android:id="@+id/action_messageListFragment_to_addMessageFragment"
+                app:destination="@id/addMessageFragment"/>
+    </fragment>
+    <fragment android:id="@+id/addMessageFragment" android:name="dimi.com.jetpack.ui.main.AddMessageFragment"
+              android:label="AddMessageFragment"/>
+</navigation>

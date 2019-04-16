@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Hello. This is my message"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toEndOf="@id/start"
+                app:layout_constraintEnd_toStartOf="@id/end"/>
+
+        <TextView
+                android:id="@+id/created"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="07.04.2019"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toBottomOf="@id/message"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toEndOf="@id/start"
+                app:layout_constraintEnd_toStartOf="@id/end"/>
+
+        <TextView
+                android:id="@+id/remindMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="12.04.2019"
+                android:textColor="@android:color/black"
+                android:gravity="end"
+                app:layout_constraintTop_toBottomOf="@id/message"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toStartOf="@id/end"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
