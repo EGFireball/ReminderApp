@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.NavHostFragment
 import dimi.com.jetpack.JetpackApp
 import dimi.com.jetpack.R
 import dimi.com.jetpack.data.entity.MessageEntity
@@ -29,9 +30,10 @@ class AddMessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         add.setOnClickListener {
-            val reminderDate: Date = Calendar.getInstance().set //(calendar.date)
-            val message = MessageEntity(0, message = message.text.toString(), Date(), null)
+            val reminderDate: Date = Date(calendar.date)
+            val message = MessageEntity(0, message = message.text.toString(), created = Date(), remindMe = reminderDate)
             messageVm.addMessage(message)
+            NavHostFragment.findNavController(this).navigate(R.id.messageListFragment)
         }
     }
 }
